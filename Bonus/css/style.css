@@ -47,9 +47,16 @@ select {
     background-color: #f0f0f0;
 }
 .container{
+    font-size: 3vw;
+    font-weight: bold;
     margin: 0 auto;   
+    color: lightgreen;
     max-width: 900px;
     padding: 3rem 1rem;
+    text-align: center;
+}
+.container.bomb{
+    color: tomato;
 }
 /* Header */
 .main_header{
@@ -77,7 +84,9 @@ select {
 .grid{
     gap: 5px;
     display: grid;
-    /* grid-template-columns: repeat(10, 1fr); */
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 .cell{
     cursor: pointer;
@@ -89,7 +98,10 @@ select {
     border: 1px solid #000;
 }
 .cell.clicked{
-    background-color: aqua;
+    background-color: lightgreen;
+}
+.clicked.bomb{
+    background-color: tomato;
 }
 /* Footer */
 .main_footer{
