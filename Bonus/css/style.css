@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: 'Open sans', sans-serif;
+}
+ul{
+    list-style: none;
+}
+/* Layout */
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+/* Components */
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+label{
+    font-size: 1.25rem;
+}
+button,
+select {
+    color: currentColor;
+    border: 0px solid;
+}
+.cta_button{
+    cursor: pointer;
+    padding: 0 2rem;
+    margin: 0 1rem;
+    line-height: 2rem;
+    font-size: 1.25rem;
+    border-radius: 0.35rem;
+}
+.cta_button.select_button{
+    padding: 0.25rem 0.75rem;
+    background-color: #f0f0f0;
+}
+.container{
+    margin: 0 auto;   
+    max-width: 900px;
+    padding: 3rem 1rem;
+}
+/* Header */
+.main_header{
+    background-color: #fff;
+    padding: 2rem 1rem;
+}
+.main_header > .row{
+    align-items: center;
+}
+.main_header > .row > .col{
+    flex-direction: row;
+    align-items: center;
+}
+.header_logo > .logo_title{
+    padding: 0 1rem;
+    font-size: 2.5rem;
+}
+.header_cta{
+    margin-left: auto;
+}
+/* Main Content >> Grid */
+.main_content{
+    flex-grow: 1;
+}
+.grid{
+    gap: 5px;
+    display: grid;
+    /* grid-template-columns: repeat(10, 1fr); */
+}
+.cell{
+    cursor: pointer;
+    min-width: 50px;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+}
+.cell.clicked{
+    background-color: aqua;
+}
+/* Footer */
+.main_footer{
+    padding: 20px;
+    background-color: #fff;
+}
