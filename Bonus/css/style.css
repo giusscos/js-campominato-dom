@@ -102,6 +102,7 @@ select {
 }
 .clicked.bomb{
     background-color: tomato;
+    cursor: no-drop;
 }
 /* Footer */
 .main_footer{

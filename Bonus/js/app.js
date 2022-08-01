@@ -6,12 +6,7 @@ function bombAct () {
     console.log('Hai cliccato la cella >> ' + cell.innerHTML);
     
     if(bombNumArray.includes(parseInt(cell.innerHTML))){
-        cell.classList.add('bomb');
-        containerEl.classList.add('bomb');
-        console.log("Hai Perduto! >> I tuoi Punti >> " + counterPoints);
-        containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
-        counterPoints = 0;
-        
+        end(cell);
     }
 
     // Punteggio Player
@@ -33,12 +28,6 @@ function genCell(e){
     cellEl.classList.add('cell');
     cellEl.innerHTML = e + 1;
 
-    // // "Old" mode function 
-    // cellEl.addEventListener('click', function(){
-    //     cellEl.classList.toggle('clicked');
-    //     console.log('Hai cliccato la cella >> ' + (e + 1));
-    // });
-
     // // "New" mode function 
     cellEl.addEventListener('click', bombAct);
     return cellEl;
@@ -56,7 +45,7 @@ function genGrid(){
     for(let i = 0; i < gridDimHei; i++){
         gridEl.append(genCell(i));
     }
-    return containerEl.append(gridEl)    
+    return containerEl.append(gridEl);   
 }
 
 // Funzione per generare la int compresi tra un intervallo
@@ -86,6 +75,15 @@ function start(){
     genGrid();
 }
 
+function end(cell){
+    cell.classList.add('bomb');
+    containerEl.classList.add('bomb');
+    console.log("Hai Perduto! >> I tuoi Punti >> " + counterPoints);
+    // containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
+    counterPoints = 0;
+    return false;
+}
+
 // Acquisizione e creazione elementi DOM
 const gridDimWidEl = document.getElementById('select_diff');
 const containerEl = document.querySelector('.container');
@@ -94,22 +92,6 @@ const gridEl = document.createElement('div');
 
 let bombArray = [];
 let counterPoints = 0;
-
-// // "Old" mode function 
-// btnPlayEl.addEventListener('click', function() {
-//     const gridEl = document.createElement('div');
-//     gridEl.classList.add('grid');
-    
-//     for(let i = 0; i < gridDimHei; i++){
-//         const cellEl = document.createElement('div');
-//         cellEl.classList.add('cell');
-//         cellEl.innerHTML = i + 1;   
-        
-//         gridEl.append(cellEl);
-//     }
-//     containerEl.append(gridEl);
-//     console.log(gridEl);
-// });
 
 // // "New" mode function
 btnPlayEl.addEventListener('click', start);
