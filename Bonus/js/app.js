@@ -79,7 +79,7 @@ function end(cell){
     cell.classList.add('bomb');
     containerEl.classList.add('bomb');
     console.log("Hai Perduto! >> I tuoi Punti >> " + counterPoints);
-    // containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
+    containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
     counterPoints = 0;
     return false;
 }
