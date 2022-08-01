@@ -8,12 +8,14 @@ function bombAct () {
         cell.classList.add('bomb');
         console.log("Hai Perduto! >> I tuoi Punti >> " + counterPoints);
         containerEl.classList.add('bomb');
-        containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
+        // containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
+        console.log('Hai Perso con un punteggio di >> ' + counterPoints + '!!!');
         counterPoints = 0;
     }
     // Punteggio Player
     if (counterPoints === gridDimHei - 17){
-        containerEl.innerHTML = 'Hai Vinto con un punteggio di >> ' + counterPoints + '!!!';
+        // containerEl.innerHTML = 'Hai Vinto con un punteggio di >> ' + counterPoints + '!!!';
+        console.log('Hai Vinto con un punteggio di >> ' + counterPoints + '!!!');
     } else{
         console.log("I tuoi Punti >> " + counterPoints);
         counterPoints++;
