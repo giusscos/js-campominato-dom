@@ -1,5 +1,5 @@
 // // Funzione per evidenziare le celle  
-function bombAct () {
+function cellAct () {
     const cell = this;
     const bombNumArray = genBombArray();
     console.log('Hai cliccato la cella >> ' + cell.innerHTML);
@@ -21,7 +21,7 @@ function bombAct () {
         counterPoints++;
     }
 
-    cell.removeEventListener('click', bombAct);
+    cell.removeEventListener('click', cellAct);
     return cell.classList.toggle('clicked');
 }
 
@@ -40,7 +40,7 @@ function genCell(e){
     // });
 
     // // "New" mode function 
-    cellEl.addEventListener('click', bombAct);
+    cellEl.addEventListener('click', cellAct);
     return cellEl;
 }
 

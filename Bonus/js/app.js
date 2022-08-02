@@ -1,10 +1,10 @@
 // // Funzione per evidenziare le celle  
-function bombAct () {
+function cellAct () {
     const cell = this;
-    const bombNumArray = genBombArray();
     const lastCell = document.querySelector('.cell:last-child');
+    const bombNumArray = genBombArray(parseInt(lastCell.innerHTML));
     console.log('Hai cliccato la cella >> ' + cell.innerHTML);
-    
+
     if(bombNumArray.includes(parseInt(cell.innerHTML))){
         end(cell);
     }
@@ -17,7 +17,7 @@ function bombAct () {
         counterPoints++;
     }
 
-    cell.removeEventListener('click', bombAct);
+    cell.removeEventListener('click', cellAct);
     return cell.classList.toggle('clicked');
 }
 
@@ -29,7 +29,7 @@ function genCell(e){
     cellEl.innerHTML = e + 1;
 
     // // "New" mode function 
-    cellEl.addEventListener('click', bombAct);
+    cellEl.addEventListener('click', cellAct);
     return cellEl;
 }
 
@@ -58,10 +58,10 @@ function genInt(min, max){
 
 // Funzione per generare l'array utilizzato per la posizione delle bombe
 // Ritorna l'array con la posizione delle bombe
-function genBombArray() {
+function genBombArray(max) {
     let i = 0;
     while(bombArray.length < 16){
-        const numBomb = genInt(1,100);
+        const numBomb = genInt(1,max);
         if(!bombArray.includes(numBomb)){
             bombArray.push(numBomb);
         }
@@ -79,9 +79,8 @@ function end(cell){
     cell.classList.add('bomb');
     containerEl.classList.add('bomb');
     console.log("Hai Perduto! >> I tuoi Punti >> " + counterPoints);
-    containerEl.innerHTML = 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
+    containerEl.innerHTML += 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
     counterPoints = 0;
-    return false;
 }
 
 // Acquisizione e creazione elementi DOM
