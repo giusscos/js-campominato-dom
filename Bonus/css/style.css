@@ -100,9 +100,8 @@ select {
 .cell.clicked{
     background-color: lightgreen;
 }
-.clicked.bomb{
+.cell.bomb{
     background-color: tomato;
-    cursor: no-drop;
 }
 /* Footer */
 .main_footer{

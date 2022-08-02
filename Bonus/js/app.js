@@ -6,7 +6,9 @@ function cellAct () {
     console.log('Hai cliccato la cella >> ' + cell.innerHTML);
 
     if(bombNumArray.includes(parseInt(cell.innerHTML))){
-        end(cell);
+        cell.classList.add('bomb');
+        containerEl.classList.add('bomb');
+        end();
     }
 
     // Punteggio Player
@@ -75,9 +77,7 @@ function start(){
     genGrid();
 }
 
-function end(cell){
-    cell.classList.add('bomb');
-    containerEl.classList.add('bomb');
+function end(){
     console.log("Hai Perduto! >> I tuoi Punti >> " + counterPoints);
     containerEl.innerHTML += 'Hai Perso con un punteggio di >> ' + counterPoints + '!!!';
     counterPoints = 0;

@@ -92,7 +92,7 @@ button {
 .cell.clicked{
     background-color: lightgreen;
 }
-.clicked.bomb{
+.cell.bomb{
     background-color: tomato;
 }
 /* Footer */
